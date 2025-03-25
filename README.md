@@ -2,11 +2,15 @@
 !!!!(For writing readme file chatGPT o3-mini was used by providing routes files)
 A RESTful API for a grocery booking system built with Node.js, Express, TypeScript, and SQLite. This application enables users to browse available grocery items and place orders, while administrators can manage inventory, grocery items, and order statuses.
 
+
+!!! check REST API basics- CRUD, test & variable.postman_collection.json file for postman api endpoint exaples/tetsing
 ## Table of Contents
 
 - [Features](#features)
 - [Tech Stack](#tech-stack)
 - [Installation](#installation)
+  - [Local Installation](#local-installation)
+  - [Docker Installation](#docker-installation)
 - [Database Setup](#database-setup)
 - [API Routes](#api-routes)
   - [Authentication Routes](#authentication-routes)
@@ -41,9 +45,12 @@ A RESTful API for a grocery booking system built with Node.js, Express, TypeScri
 
 ## Installation
 
+### Local Installation
+
 1. Clone the repository:
    ```
-   then goto that folder
+   git clone <repository-url>
+   cd 
    ```
 
 2. Install dependencies:
@@ -62,6 +69,40 @@ A RESTful API for a grocery booking system built with Node.js, Express, TypeScri
    ```
    npm run dev
    ```
+
+### Docker Installation
+
+1. Make sure you have Docker and Docker Compose installed on your system.
+
+2. Clone the repository:
+   ```
+   git clone <repository-url>
+   cd 
+   ```
+
+3. Create a .env file based on the .env.example and configure your environment variables.
+
+4. Build and start the containers:
+   ```
+   docker-compose up --build
+   ```
+
+5. In a new terminal, run the database migrations:
+   ```
+   docker-compose exec app npm run migrate
+   ```
+
+The application will be available at http://localhost:5000
+
+To stop the containers:
+```
+docker-compose down
+```
+
+To view logs:
+```
+docker-compose logs -f
+```
 
 ## Database Setup
 
